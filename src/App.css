@@ -89,38 +89,42 @@
   }
 }
 
-.nuvoloso {
-  background-image: url('/public/nuvoloso.jpg');
+/* Classi base per gli sfondi */
+.nuvoloso, .soleggiato, .temporali, .notte {
+  position: relative;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  transition: background-image 0.5s ease-in-out;
+
+}
+
+/* Specifica degli sfondi per ogni condizione */
+.nuvoloso {
+  background-image: url('/public/nuvoloso.jpg');
 }
 
 .soleggiato {
   background-image: url('/public/soleggiato.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  transition: background-image 0.5s ease-in-out;
 }
 
 .temporali {
   background-image: url('/public/temporali.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  transition: background-image 0.5s ease-in-out;
 }
 
 .notte {
   background-image: url('/public/notte.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  transition: background-image 0.5s ease-in-out;
 }
 
-.background1{
+.neve {
+  background-image: url('/public/neve.jpg');
+}
+
+.nebbia {
+  background-image: url('/public/nebbia.jpg');
+}
+
+
+/* Classe per colore di sfondo */
+.background1 {
   background-color: white;
 }

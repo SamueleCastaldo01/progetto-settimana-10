@@ -23,18 +23,14 @@ function HomePage() {
       // Giorno
       if (icon.startsWith("01")) {
         return "soleggiato"; // Soleggiato
-      } else if (
-        icon.startsWith("02") ||
-        icon.startsWith("03") ||
-        icon.startsWith("04")
-      ) {
+      } else if (icon.startsWith("02") || icon.startsWith("03") || icon.startsWith("04")) {
         return "nuvoloso"; // Nuvoloso
-      } else if (
-        icon.startsWith("09") ||
-        icon.startsWith("10") ||
-        icon.startsWith("11")
-      ) {
+      } else if (icon.startsWith("09") || icon.startsWith("10") || icon.startsWith("11")) {
         return "temporali"; // Temporali
+      } else if (icon.startsWith("13")) {
+        return "neve"; // Neve
+      } else if (icon.startsWith("50")) {
+        return "nebbia"; // Nebbia
       }
     } else if (icon.includes("n")) {
       // Notte
@@ -159,7 +155,7 @@ function HomePage() {
             className="inp"
             id="outlined-basic"
             label="Cerca località"
-            variant="outlined"
+            variant="filled"
             onChange={(event) => setInpSearch(event.target.value)}
             value={inpSearch}
             slotProps={{
