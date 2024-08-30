@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Error from './pages/Error';
 import Footer from './components/Footer';
 
+// è anche responsive
+
 function App() {
   return (
     <div className="App">

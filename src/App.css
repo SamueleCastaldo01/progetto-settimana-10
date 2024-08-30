@@ -72,11 +72,18 @@
   width: 25%;
 }
 
+.inp {
+  width: 25%;
+}
+
 @media (max-width: 992px) {
   .divWeather {
     width: 50%;
   }
   .tabForecast{
     width: 95%;
+  }
+  .inp{
+    width: 50%;
   }
 }

@@ -10,11 +10,11 @@ function DaysWeather(props) {
       >
         <h2>Previsioni per i Prossimi Giorni: {props.city}</h2>
         <div className="row justify-content-between d-flex fw-bold">
-          <div className="col-lg-2 col-4">Giorno</div>
-          <div className="col-lg-2 col-4">Descrizione</div>
+          <div className="col-md-2 col-4">Giorno</div>
+          <div className="col-md-2 col-4">Descrizione</div>
           <div className="col-2 d-md-block d-none">Temp Min</div>
           <div className="col-2 d-md-block d-none">Temp Max</div>
-          <div className="col-lg-2 col-4">Umidità</div>
+          <div className="col-md-2 col-4">Umidità</div>
           <div className="col-2 d-lg-block d-none">Vento</div>
         </div>
         {props.daysWeather.map((item, index) => {
@@ -22,8 +22,8 @@ function DaysWeather(props) {
           const date = moment.unix(item.dt).format("dddd D");
           return (
             <div className="row justify-content-between d-flex align-items-center" key={index}>
-              <div className="col-lg-2 col-4">{date}</div>
-              <div className="col-lg-2 col-4">
+              <div className="col-md-2 col-4">{date}</div>
+              <div className="col-md-2 col-4">
                 <div className="row d-flex align-items-center">
                   <div className="col-6 pe-0 text-end">
                     <img
@@ -43,7 +43,7 @@ function DaysWeather(props) {
               <div className="col-2 d-md-block d-none">
                 {Math.round(item.main.temp_max - 273.15)}°C
               </div>
-              <div className="col-lg-2 col-4">{item.main.humidity}%</div>
+              <div className="col-md-2 col-4">{item.main.humidity}%</div>
               <div className="col-2 d-lg-block d-none">{item.wind.speed} m/s</div>
             </div>
           );

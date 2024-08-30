@@ -128,7 +128,7 @@ function HomePage() {
           onSubmit={handleSubmit}
         >
           <TextField
-            className="w-25"
+            className="inp"
             id="outlined-basic"
             label="Cerca località"
             variant="outlined"
