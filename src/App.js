@@ -3,6 +3,8 @@ import './App.css';
 import HomePage from "./pages/HomePage";
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Error from './pages/Error';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,8 +14,7 @@ function App() {
         <NavBar />
         <Routes>
         <Route path="/" element={<HomePage />} />
-
-
+        <Route path='*' element={<Error />} />
         </Routes>
       </Router>
 
