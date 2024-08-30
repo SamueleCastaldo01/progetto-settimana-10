@@ -10,6 +10,7 @@ import Weather from "../components/Weather";
 function HomePage() {
   const [forecast, setForecast] = useState(null);
   const [weather, setWeather] = useState(null);
+  const [days, setDays] = useState(null);
   const color = "#1A4899";
   const [inpSearch, setInpSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -96,9 +97,9 @@ function HomePage() {
 
   return (
     <>
-      <div className="px-5">
+      <div className="px-5 d-flex flex-column align-items-center">
         <form
-          className="d-flex justify-content-center mt-4"
+          className="d-flex justify-content-center mt-4 w-100"
           onSubmit={handleSubmit}
         >
           <TextField
@@ -126,10 +127,7 @@ function HomePage() {
         </form>
 
         {isLoading && (
-          <p>
-            {" "}
             <CircularProgress />
-          </p>
         )}
         {isError && <p>Errore nel recupero dei dati</p>}
         {weather && (
