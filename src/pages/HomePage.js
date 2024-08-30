@@ -11,6 +11,7 @@ import DaysWeather from "../components/DaysWeather";
 function HomePage() {
   const [forecast, setForecast] = useState(null);
   const [weather, setWeather] = useState(null);
+  const [description, setDescription] = useState(null)
   const [daysWeather, setDaysWeather] = useState(null);
   const color = "#1A4899";
   const [inpSearch, setInpSearch] = useState("");
@@ -21,10 +22,10 @@ function HomePage() {
   const fetchForecast = (city) => {
     const apiKey = "7ea4fef49e63c77f69aecc239adf4b1b";
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
-
+  
     setIsLoading(true);
     setIsError(false);
-
+  
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -34,20 +35,13 @@ function HomePage() {
         }
       })
       .then((data) => {
-        // Filtra le previsioni per la giornata odierna
-        const now = new Date();
-        const midnight = new Date(now);
-        midnight.setHours(24, 0, 0, 0); // Imposta l'ora a mezzanotte
-
-        const filteredForecast = data.list.filter((item) => {
-          const itemDate = new Date(item.dt * 1000);
-          return itemDate < midnight;
-        });
-
-        setForecast({
+        // Prendi solo i primi 10 elementi della previsione
+        const limitedData = {
           ...data,
-          list: filteredForecast,
-        });
+          list: data.list.slice(0, 10)
+        };
+  
+        setForecast(limitedData);
         setIsLoading(false);
       })
       .catch((err) => {

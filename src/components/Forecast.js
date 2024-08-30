@@ -1,7 +1,7 @@
 function Forecast(props) {
   return (
     <>
-      <div className="tabForecast rounded-2 pb-2 mt-4" style={{ width: "90%" }}>
+      <div className="tabForecast rounded-2 pb-2 mt-4 bg-white" style={{ width: "90%" }}>
         <h2>Previsioni Oggi: {props.forecast.city.name}</h2>
         <div className="mt-3 row justify-content-center d-flex fw-bold">
           <div className="col-1">Orario</div>
@@ -12,7 +12,7 @@ function Forecast(props) {
           <div className="col-2">Umidità</div>
           <div className="col-1">Vento</div>
         </div>
-        <div className="overflow-scroll">
+        <div className="forecastTabInt">
           <div className="row weather-row d-flex justify-content-center align-items-center">
             <div className="col-1">Attuale</div>
             <div className="col-2">

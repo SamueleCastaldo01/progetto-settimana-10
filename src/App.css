@@ -44,3 +44,25 @@
   height: 340px;
 }
 
+.forecastTabInt {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 78%;
+
+}
+
+/* Personalizza la larghezza della barra di scorrimento */
+.forecastTabInt::-webkit-scrollbar {
+  width: 8px; /* Modifica la larghezza della barra di scorrimento */
+}
+
+/* Personalizza il "cursore" della barra di scorrimento */
+.forecastTabInt::-webkit-scrollbar-thumb {
+  background-color: #888; /* Colore del cursore della barra di scorrimento */
+  border-radius: 10px; /* Arrotonda gli angoli del cursore */
+}
+
+/* Personalizza il "contenitore" della barra di scorrimento */
+.forecastTabInt::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Colore di sfondo della barra di scorrimento */
+}
