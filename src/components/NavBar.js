@@ -49,18 +49,18 @@ function NavBar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-bold" href="/profile">
+                <a className="nav-link fw-bold" href="/">
                   Notizie
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-bold" href="/settings">
+                <a className="nav-link fw-bold" href="/">
                   Info
                 </a>
               </li>
             </ul>
             <div className="d-flex align-items-center">
-              <Link className="navbar-brand" to="/search">
+              <Link className="navbar-brand" to="/">
                 <i className="bi bi-search icons"></i>
               </Link>
               {location.pathname === "/" && (
