@@ -89,7 +89,7 @@
   }
 }
 
-.background1 {
+.nuvoloso {
   background-image: url('/public/nuvoloso.jpg');
   background-size: cover;
   background-position: center;
@@ -97,7 +97,7 @@
   transition: background-image 0.5s ease-in-out;
 }
 
-.background2 {
+.soleggiato {
   background-image: url('/public/soleggiato.jpg');
   background-size: cover;
   background-position: center;
@@ -105,7 +105,7 @@
   transition: background-image 0.5s ease-in-out;
 }
 
-.background3 {
+.temporali {
   background-image: url('/public/temporali.jpg');
   background-size: cover;
   background-position: center;
@@ -113,10 +113,14 @@
   transition: background-image 0.5s ease-in-out;
 }
 
-.background4 {
+.notte {
   background-image: url('/public/notte.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   transition: background-image 0.5s ease-in-out;
+}
+
+.background1{
+  background-color: white;
 }

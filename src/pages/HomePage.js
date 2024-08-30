@@ -11,7 +11,7 @@ import DaysWeather from "../components/DaysWeather";
 function HomePage() {
   const [forecast, setForecast] = useState(null);
   const [weather, setWeather] = useState(null);
-  const [background, setBackground] = useState("background4");
+  const [background, setBackground] = useState("background1");
   const [daysWeather, setDaysWeather] = useState(null);
   const color = "#1A4899";
   const [inpSearch, setInpSearch] = useState("");
@@ -22,23 +22,23 @@ function HomePage() {
     if (icon.includes("d")) {
       // Giorno
       if (icon.startsWith("01")) {
-        return "background2"; // Soleggiato
+        return "soleggiato"; // Soleggiato
       } else if (
         icon.startsWith("02") ||
         icon.startsWith("03") ||
         icon.startsWith("04")
       ) {
-        return "background1"; // Nuvoloso
+        return "nuvoloso"; // Nuvoloso
       } else if (
         icon.startsWith("09") ||
         icon.startsWith("10") ||
         icon.startsWith("11")
       ) {
-        return "background3"; // Temporali
+        return "temporali"; // Temporali
       }
     } else if (icon.includes("n")) {
       // Notte
-      return "background4"; // Notte
+      return "notte"; // Notte
     }
     return "background1"; // Default: Nuvoloso
   };
