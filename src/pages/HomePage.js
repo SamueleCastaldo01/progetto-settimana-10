@@ -7,6 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Forecast from "../components/Forecast";
 import Weather from "../components/Weather";
 import DaysWeather from "../components/DaysWeather";
+import WeatherAdvice from "../components/WeatherAdvice";
 
 function HomePage() {
   const [forecast, setForecast] = useState(null);
@@ -179,7 +180,12 @@ function HomePage() {
 
         {isLoading && <CircularProgress />}
         {isError && <p>Errore nel recupero dei dati</p>}
-        {weather && <Weather weather={weather} />}
+        {weather && 
+        <>
+        <Weather weather={weather}/>
+        <WeatherAdvice weather={weather} />
+        </>
+         }
         {forecast && weather && (
           <Forecast forecast={forecast} weather={weather} />
         )}
