@@ -11,21 +11,46 @@ import DaysWeather from "../components/DaysWeather";
 function HomePage() {
   const [forecast, setForecast] = useState(null);
   const [weather, setWeather] = useState(null);
-  const [description, setDescription] = useState(null)
+  const [background, setBackground] = useState("background4");
   const [daysWeather, setDaysWeather] = useState(null);
   const color = "#1A4899";
   const [inpSearch, setInpSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
+  const getBackgroundForIcon = (icon) => {
+    if (icon.includes("d")) {
+      // Giorno
+      if (icon.startsWith("01")) {
+        return "background2"; // Soleggiato
+      } else if (
+        icon.startsWith("02") ||
+        icon.startsWith("03") ||
+        icon.startsWith("04")
+      ) {
+        return "background1"; // Nuvoloso
+      } else if (
+        icon.startsWith("09") ||
+        icon.startsWith("10") ||
+        icon.startsWith("11")
+      ) {
+        return "background3"; // Temporali
+      }
+    } else if (icon.includes("n")) {
+      // Notte
+      return "background4"; // Notte
+    }
+    return "background1"; // Default: Nuvoloso
+  };
+
   //-----------------------------------------------------------------------------------
   const fetchForecast = (city) => {
     const apiKey = "7ea4fef49e63c77f69aecc239adf4b1b";
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
-  
+
     setIsLoading(true);
     setIsError(false);
-  
+
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -38,9 +63,9 @@ function HomePage() {
         // Prendi solo i primi 10 elementi della previsione
         const limitedData = {
           ...data,
-          list: data.list.slice(0, 10)
+          list: data.list.slice(0, 10),
         };
-  
+
         setForecast(limitedData);
         setIsLoading(false);
       })
@@ -69,6 +94,9 @@ function HomePage() {
       })
       .then((data) => {
         setWeather(data);
+        const icon = data.weather[0].icon;
+        const newBackground = getBackgroundForIcon(icon);
+        setBackground(newBackground);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -122,7 +150,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="d-flex flex-column align-items-center">
+      <div className={`d-flex flex-column align-items-center ${background}`}>
         <form
           className="d-flex justify-content-center mt-4 w-100"
           onSubmit={handleSubmit}
@@ -160,7 +188,7 @@ function HomePage() {
           <Forecast forecast={forecast} weather={weather} />
         )}
         {daysWeather && (
-            <DaysWeather daysWeather={daysWeather} city={weather.name}/>
+          <DaysWeather daysWeather={daysWeather} city={weather.name} />
         )}
       </div>
     </>
