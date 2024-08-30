@@ -122,7 +122,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="px-5 d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center">
         <form
           className="d-flex justify-content-center mt-4 w-100"
           onSubmit={handleSubmit}

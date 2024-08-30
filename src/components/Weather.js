@@ -2,7 +2,7 @@ function Weather(props) {
   return (
     <>
       <div
-        className="text-white rounded-3 row w-25 mt-2 d-flex align-items-center"
+        className="text-white rounded-3 row divWeather mt-2 d-flex align-items-center"
         style={{ backgroundColor: "#1A4899" }}
       >
         <div className="col-4">

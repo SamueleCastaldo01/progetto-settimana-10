@@ -42,6 +42,7 @@
 .tabForecast {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 340px;
+  width: 85%;
 }
 
 .forecastTabInt {
@@ -65,4 +66,17 @@
 /* Personalizza il "contenitore" della barra di scorrimento */
 .forecastTabInt::-webkit-scrollbar-track {
   background: #f1f1f1; /* Colore di sfondo della barra di scorrimento */
+}
+
+.divWeather {
+  width: 25%;
+}
+
+@media (max-width: 992px) {
+  .divWeather {
+    width: 50%;
+  }
+  .tabForecast{
+    width: 95%;
+  }
 }
